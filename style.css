@@ -1,5 +1,7 @@
 body {
-    background: rgb(159, 247, 255);
+    background-image: url(/img/eldenRing.jpeg);
+    background-position: cover;
+    background-size: cover;
     color: rgb(16, 28, 189);
     padding: 10px;
     font-family: arial;
@@ -135,4 +137,8 @@ h2, h3 {
       align-content: center;
       justify-content: center;
     }
+}
+#all-contents2 {
+  max-width: 800px;
+    margin: auto;
 }
