@@ -9,7 +9,7 @@
 		.box {
 			width: 70px;
 			height: 70px;
-			background-color: teal;
+			background-color: rgb(200, 0, 255);
 			font-size: 300%;
 			text-align: center;
 			user-select: none;
@@ -17,11 +17,12 @@
 			position: absolute;
 			top: 100px;
 			/* Change me! */
-			left: 0px;
+			left: 400px;
 		}
 
 		.board {
 			height: 100vh;
+			background-image: url("https://media0.giphy.com/media/3o6vXTpomeZEyxufGU/200w.gif?cid=6c09b952x6n31r38xs1o37cdgsgkb3qsegs4qmybo5ymt2dw&ep=v1_gifs_search&rid=200w.gif&ct=g")
 		}
 	</style>
 	<!-- 	<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script> -->
@@ -66,18 +67,39 @@
 			//////////////////////////////////////////////////////////////////
 
 			// TODO 2 - Variable declarations 
+			var positionX = 0
+			var points = 0
+			var speedX = 10
+			var positionY;
+			var speedY;
+
 
 
 
 			/* 
+
 			This Function will be called 20 times/second. Each time it is called,
 			it should move the Box to a new location. If the box drifts off the screen
 			turn it around! 
 			*/
-			function update() {
 
+			function update() {
+				/* Your Code to Increase positionX by 10 HERE */
+				positionX = positionX + speedX;
+				moveBoxTo(positionX, );
+				if (positionX + 70 > boardWidth)  {
+					speedX *= -1;
+				
+				}
+				if (positionX < 0)  {
+					speedX *= -1;
+				
+				}
+				
+			
 
 			};
+		
 
 			/* 
 			This Function will be called each time the box is clicked. Each time it is called,
@@ -85,8 +107,18 @@
 			the left side of the screen.
 			*/
 			function handleBoxClick() {
+				if (speed > 0)  {
+					speed = speed + 3
+				} else {
+					speed = speed - 3
+				}
 
+				speed = speed + 3
+				positionX = 0;
 
+				// your code to incease the points varieble by 1
+				points = points + 1
+				changeBoxText(points)
 			};
 
 

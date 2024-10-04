@@ -6,4 +6,4 @@ age = input("how old are you ")
 if age > str(18):
     print("congrats, you meet the requirement")
 elif age < str(18):
-    print("sorry but you do NOT mneet the requirement")
+    print("sorry but you do NOT meet the requirement")

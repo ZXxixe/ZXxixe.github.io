@@ -3,7 +3,7 @@ $(function () {
   canvas = document.getElementById("canvas");
   ctx = canvas.getContext("2d");
   window.addEventListener("load", loadJson);
-
+  
   function setup() {
     if (firstTimeSetup) {
       halleImage = document.getElementById("player");
@@ -39,15 +39,24 @@ $(function () {
     // You must decide the x position, y position, width, and height of the platforms
     // example usage: createPlatform(x,y,width,height)
 
-    createPlatform(0, 135, 200, 20);
-    createPlatform(160, 260, 200, 20);
-    createPlatform(700, 360, 200, 20);
-    createPlatform(1020, 480, 200, 20);
-    createPlatform(1080, 300, 200, 20);
-    createPlatform(1225, 610, 200, 20);
-    createPlatform(360, 610, 200, 20);
-    createPlatform(500, 300, 200, 20)
+    createPlatform(150, 0, 20, 625);
+    createPlatform(150, 625, 1140, 20);
+    createPlatform(280, 500, 10000, 20);
+    createPlatform(150, 380, 1000, 20);
+    createPlatform(1150, 100, 20, 300);
+    createPlatform(1150, 380, 125, 20);
+    createPlatform(1225, 280, 180, 20);
+    createPlatform(1225, 180, 180, 20);
+    createPlatform(250, 100, 920, 20);
+    createPlatform(250, 100, 20, 150);
+    createPlatform(250, 250, 800, 20);
+    
 
+
+
+
+    
+   
 
 
     
@@ -57,9 +66,10 @@ $(function () {
     // Your collectable choices are 'database' 'diamond' 'grace' 'kennedi' 'max' and 'steve'; more can be added if you wish
     // example usage: createCollectable(type, x, y, gravity, bounce)
     
-    createCollectable("max", 500, 170, 6, 0.7); //your example function call
-    createCollectable("steve", 1180, 170, 6, 0.7); //your example function call
-    createCollectable("grace", 1300, 170, 6, 0.7); //your example function call
+    createCollectable("max", 500, 170, 6, 1,); //your example function call
+    createCollectable("max", 1350, 200, 6, 1,); //your example function call
+    createCollectable("max", 1, 200, 6, 1,); //your example function call
+
 
 
     
@@ -68,11 +78,18 @@ $(function () {
     // You must decide the wall you want the cannon on, the position on the wall, and the time between shots in milliseconds
     // Your wall choices are: 'top' 'left' 'right' and 'bottom'
     // example usage: createCannon(side, position, delay, width, height)
+    createCannon("top", 360, 5000,1);
+    createCannon("top", 500, 6000,1);
+    createCannon("top", 640, 2000,1);
+    createCannon("top", 780, 4000,1);
+    createCannon("top", 780, 60000, 100000, 10000,);
+    createCannon("top", 920, 3000,1);
+    createCannon("top", 1060, 2000,1);
+    createCannon("top", 1400, 5000,100,500);
+    createCannon("left", 620, 2200,1,100);
+    createCannon("left", 440, 15000,10,5,);
+    createCannon("right", 125, 8000,10,5,);
 
-    createCannon("top", 360, 1000);
-    createCannon("left", 600, 1500);
-    createCannon("top", 1000, 1000);
-    
 
     
     /////////////////////////////////////////////////
