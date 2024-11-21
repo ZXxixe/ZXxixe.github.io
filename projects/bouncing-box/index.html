@@ -53,8 +53,9 @@
 			box.on('click', handleBoxClick);
 
 			// moves the Box to a new position on the screen along the X-Axis
-			function moveBoxTo(newPositionX) {
+			function moveBoxTo(newPositionX, newPositionY) {
 				box.css("left", newPositionX);
+				box.css("top", newPositionY);
 			}
 
 			// changes the text displayed on the Box
@@ -70,8 +71,10 @@
 			var positionX = 0
 			var points = 0
 			var speedX = 10
-			var positionY;
-			var speedY;
+			var positionY = 0;
+			var speedY = 10;
+			var boardHeight = jQuery(window).height();
+			var randNum = Math.random() * 100;
 
 
 
@@ -85,8 +88,8 @@
 
 			function update() {
 				/* Your Code to Increase positionX by 10 HERE */
-				positionX = positionX + speedX;
-				moveBoxTo(positionX, );
+		
+				
 				if (positionX + 70 > boardWidth)  {
 					speedX *= -1;
 				
@@ -95,8 +98,20 @@
 					speedX *= -1;
 				
 				}
+	
+				if (positionY + 70 > boardHeight)  {
+					speedY *= -1;
 				
-			
+				}
+				if (positionY < 0)  {
+					speedY *= -1;
+				
+				}
+
+				positionX = positionX + speedX;
+				positionY = positionY + speedY;
+
+				moveBoxTo(positionX, positionY);
 
 			};
 		
@@ -107,13 +122,13 @@
 			the left side of the screen.
 			*/
 			function handleBoxClick() {
-				if (speed > 0)  {
-					speed = speed + 3
+				if (speedX > 0)  {
+					speedX = speedX + 3
 				} else {
-					speed = speed - 3
+					speedX = speedX - 3
 				}
 
-				speed = speed + 3
+				speedX = speedX + 3
 				positionX = 0;
 
 				// your code to incease the points varieble by 1
